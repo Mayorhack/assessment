@@ -14,6 +14,7 @@ const ProtectedRoute = ({ children }: ProtectedRoutesProps) => {
       setUser({ email: "", isLoggedIn: false });
     }, 120000);
     return () => clearInterval(interval);
+    // eslint-disable-next-line
   }, []);
   return <>{user.isLoggedIn ? children : <Navigate to={"/"} />}</>;
 };
