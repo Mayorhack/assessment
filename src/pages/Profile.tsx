@@ -77,7 +77,7 @@ const Profile = () => {
       <nav>
         <Logo />
         <p className="flex" style={{ textAlign: "right" }}>
-          U will be logged out in: <Timer />
+          User will be logged out in: <Timer />
         </p>
       </nav>
       <div className="flex profile_flex">
