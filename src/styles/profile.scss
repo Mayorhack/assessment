@@ -1,0 +1,142 @@
+.profile {
+  min-height: 100vh;
+  .logo {
+    top: 1rem;
+  }
+  nav {
+    background: #ffffff;
+    border: 0.7px solid #dce2ea;
+    height: 9rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    p {
+      padding-inline: 10px;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+  .profile_flex {
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: stretch;
+    padding-inline: 4rem 2rem;
+    padding-block: 1.2rem;
+    .company_info {
+      width: calc(67% - 10rem);
+      .card_component {
+        padding: 5rem 10rem;
+        min-height: 50rem;
+        .company_logo {
+          padding: 10px;
+          font-size: 2.4rem;
+          line-height: 24px;
+          letter-spacing: -0.5px;
+          margin-right: 20px;
+          color: #1cc578;
+          background: #fee7ea;
+          border-radius: 50%;
+        }
+        h2 {
+          font-size: 24px;
+          line-height: 37px;
+          text-transform: uppercase;
+        }
+        .ceo {
+          margin-block: 2.4rem;
+          p {
+            color: #858585;
+            font-size: 12px;
+          }
+          .name {
+            text-transform: uppercase;
+            margin-top: 4px;
+            color: #1a1a1a;
+            font-size: 16px;
+            line-height: 25px;
+          }
+        }
+      }
+      @media (max-width: 768px) {
+        width: 100%;
+        .card_component {
+          padding: 2rem;
+        }
+      }
+    }
+
+    aside {
+      width: calc(31% + 6rem);
+
+      .card_component {
+        padding: 8rem 2.4rem;
+        background-color: #f7f7f7;
+        h2 {
+          font-size: 24px;
+          line-height: 37px;
+          text-align: center;
+          margin-top: 24px;
+        }
+        .notification_text {
+          margin-top: 8px;
+          color: #595959;
+          text-align: center;
+          padding: 10px;
+        }
+
+        .coming_soon {
+          width: 14.1rem;
+          padding: 6px 16px;
+          background: #feebee;
+          border-radius: 30px;
+          color: #e60a2b;
+          margin-bottom: 6rem;
+          gap: 8px;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 22px;
+        }
+        .outlined {
+          padding: 2rem 2.4rem;
+          padding-right: 4.8rem;
+          background-color: #fff;
+          .grid {
+            grid-template-columns: 45px 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+            p {
+              background: #f4f5f5;
+              justify-content: center;
+              border-radius: 6px;
+              padding: 4px;
+              font-weight: 600;
+              font-size: 24px;
+              line-height: 37px;
+            }
+            div {
+              &::after,
+              &::before {
+                display: block;
+                content: "";
+                height: 14px;
+
+                background: #f5f5f5;
+                border-radius: 4px;
+              }
+              &::before {
+                width: 100%;
+                margin-bottom: 4px;
+              }
+              &::after {
+                width: 75%;
+              }
+            }
+          }
+        }
+      }
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+  }
+}

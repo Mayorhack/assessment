@@ -1,0 +1,115 @@
+.login {
+  min-height: 100vh;
+  background-color: #fef0f2;
+  .login_grid {
+    grid-template-columns: 3fr 4fr;
+    .left {
+      padding-inline: 3rem;
+      background-color: #fff;
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      h2 {
+        font-weight: 700;
+        font-size: 3.2rem;
+        line-height: 4.8rem;
+        letter-spacing: -0.5px;
+      }
+      p {
+        color: #595959;
+      }
+      .items {
+        margin-top: 3.8rem;
+        .grid {
+          padding: 10px;
+          margin-block: 1.5rem;
+          grid-template-columns: 6.5rem 1fr;
+          column-gap: 20px;
+          row-gap: 4px;
+          padding-right: 6rem;
+          position: relative;
+          h3 {
+            font-size: 16px;
+            line-height: 25px;
+            font-weight: 500;
+            color: #858585;
+          }
+          p {
+            font-size: 12px;
+            line-height: 19px;
+            color: #a3a3a3;
+          }
+          img {
+            grid-row: 1 / span 2;
+          }
+          &:hover {
+            background: #f8f8f6;
+            border-radius: 20px;
+            p {
+              color: #73798c;
+            }
+            h3 {
+              color: #1a1a1a;
+            }
+            &::after {
+              content: "\2713";
+              position: absolute;
+              font-size: 12px;
+              top: 50%;
+              right: 1.4rem;
+              border-radius: 50%;
+              border: 1px solid #f9c320;
+              color: #f9c320;
+              font-weight: 700;
+              padding: 3px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .login_form {
+    display: grid;
+    place-items: center;
+    .card_component {
+      width: min(45rem, 80vw);
+      background-color: #ffffff;
+      padding: 3.5rem 5rem;
+      h2 {
+        font-size: 24px;
+        line-height: 37px;
+      }
+      p {
+        color: #858585;
+      }
+      .btn {
+        margin-top: 2rem;
+        cursor: pointer;
+      }
+      .form_error {
+        color: #fff;
+        opacity: 0;
+        transition: 300ms ease-out;
+      }
+      .form_error_active {
+        color: red;
+        opacity: 1;
+      }
+    }
+  }
+  @media (max-width: 990px) {
+    .login_grid {
+      height: 100vh;
+      grid-template-columns: unset;
+      place-items: center;
+      .left {
+        display: none;
+      }
+    }
+    .login_form {
+      .card_component {
+        padding: 2rem;
+      }
+    }
+  }
+}

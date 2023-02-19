@@ -1,0 +1,20 @@
+@import "./components.scss";
+@import "./login.scss";
+@import "./profile.scss";
+@import "./animatio.scss";
+
+.App {
+  min-height: 100vh;
+  height: 100%;
+}
+.container {
+  padding: 50px;
+}
+.grid {
+  display: grid;
+  align-items: center;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}

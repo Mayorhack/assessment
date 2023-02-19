@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./styles/workflow.scss";
+
+import Login from "./pages/Login";
+import { Routes, Route } from "react-router-dom";
+import Profile from "./pages/Profile";
+import ProtectedRoute from "./components/ProtectedRoute";
+import { useContext, useEffect } from "react";
+import UserContext from "./context/UserProvider";
 
 function App() {
+  const { setUser } = useContext(UserContext);
+  useEffect(() => {
+    const dataName = sessionStorage.getItem("user");
+    if (dataName !== null) setUser(JSON.parse(dataName));
+
+    // eslint-disable-next-line
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<Login />}></Route>
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        ></Route>
+      </Routes>
     </div>
   );
 }
